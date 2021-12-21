@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class NovaEmpresaServLet
  */
@@ -19,14 +20,20 @@ public class NovaEmpresaServLet extends HttpServlet {
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void server(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeDaEmpresa = request.getParameter("nome");
+		
+		Empresa empresa = new Empresa();
+	    empresa.setNome(nomeDaEmpresa);
+		
+		Banco banco = new Banco();
+		banco.adciona(empresa);  
 		
 		
 		System.out.println("Cadastrando nova empresa");
 		PrintWriter out = response.getWriter();
 		
-		out.println("<html><body>Empresa"+nomeDaEmpresa+"Cadastrada Com Sucesso!</body></html>");
+		out.println("<html><body>Empresa"+" "+nomeDaEmpresa+" "+"Cadastrada Com Sucesso!</body></html>");
 		
 	}
 
