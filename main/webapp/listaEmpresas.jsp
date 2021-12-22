@@ -10,6 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${not empty empresa}">
+Empresa ${empresa} Cadastrada Com Sucesso!
+</c:if>
+
+
 Lista de empresas : <br/>
 <ul>
 
@@ -17,7 +22,7 @@ Lista de empresas : <br/>
 
   
   <li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/></li>
-
+  <a href="/gerenciador/removeEmpresa?id=${empresa.id }">remove</a>
 </c:forEach>
 
 </ul>
