@@ -3,6 +3,9 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
+
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 public class Banco {
 
@@ -56,6 +59,21 @@ public class Banco {
 		
 		
 		}
+
+
+	public Empresa buscaEmpresaPelaId(Integer id) {
+		
+		for(Empresa empresa : lista) {
+			if(empresa.getId()==id) {
+				return empresa;
+			}
+			
+			
+		}
+		return null;
+		 
+		
+	}
 			
 
 }
