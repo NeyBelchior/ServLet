@@ -49,14 +49,15 @@ public class NovaEmpresaServLet extends HttpServlet {
 		
 		Banco banco = new Banco();
 		banco.adciona(empresa);  
-		
+		request.setAttribute("empresa", empresa.getNome());	
 		
 		System.out.println("Cadastrando nova empresa");
-	
+	    
+		response.sendRedirect("listaEmpresasServlet");
 		
-	RequestDispatcher rd	=  request.getRequestDispatcher("novaEmpresaCadastrada.jsp");
-	request.setAttribute("empresa", empresa.getNome());	
-	rd.forward(request, response);
+//	RequestDispatcher rd	=  request.getRequestDispatcher("/listaEmpresasServlet");
+//	request.setAttribute("empresa", empresa.getNome());	
+//	rd.forward(request, response);
 		
 		
 	}
