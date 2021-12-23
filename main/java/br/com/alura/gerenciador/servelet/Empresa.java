@@ -8,9 +8,6 @@ public class Empresa {
 	private Date dataAbertura = new Date();
 	
 	
-	
-	
-	
  
 public int getId() {
 		return id;
